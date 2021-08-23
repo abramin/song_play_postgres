@@ -44,6 +44,7 @@ def process_log_file(cur, filepath):
     time_df = pd.DataFrame.from_dict(dict(zip(column_labels, time_data)))
 
     # Bulk load time records
+    # Adapted from https://naysan.ca/2020/06/21/pandas-to-postgresql-using-psycopg2-copy_from/
     tmp_time_df = "./tmp_time_dataframe.csv"
     time_df.to_csv(tmp_time_df, index=False, header=False)
     file = open(tmp_time_df, 'r')
