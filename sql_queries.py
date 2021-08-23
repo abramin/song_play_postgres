@@ -38,7 +38,7 @@ longitude FLOAT)
 
 time_table_create = ("""
 CREATE TABLE IF NOT EXISTS time (
-start_time TIMESTAMP,
+start_time TIMESTAMP NOT NULL PRIMARY KEY,
 hour INT,
 day INT,
 week INT,
